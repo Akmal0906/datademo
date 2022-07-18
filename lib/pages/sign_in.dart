@@ -143,6 +143,7 @@ String pw=box.get('password');
                     ),
                    const SizedBox(width: 30,),
                     GestureDetector(
+
                         onTap: (){
                           Navigator.pushNamed(context, SignUp.id);
                         },

@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 
+import '../model/account_model.dart';
 import '../model/user_model.dart';
 
 class HiveDB {
@@ -16,5 +17,18 @@ class HiveDB {
 
   deleteUser() {
     box.delete('user');
+  }
+
+  storeAccount(Account account) {
+    box.put('account', account.toJson());
+  }
+
+  Account loadAccount() {
+    var account = Account.fromJson(box.get('account'));
+    return account;
+  }
+
+  deleteAccount() {
+    box.delete('account');
   }
 }
